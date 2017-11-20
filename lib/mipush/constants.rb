@@ -213,8 +213,8 @@ module Mipush
       :V1_MESSAGE_STATUS                  => ["/v1/trace/message/status"],
       :V1_GET_MESSAGE_COUNTERS            => ["/v1/stats/message/counters"],
 
-      :V1_FEEDBACK_INVALID_ALIAS          => ["/v1/feedback/fetch_invalid_aliases", request_type.Feedback],
-      :V1_FEEDBACK_INVALID_REGID          => ["/v1/feedback/fetch_invalid_regids", request_type.Feedback],
+      :V1_FEEDBACK_INVALID_ALIAS          => ["/v1/feedback/fetch_invalid_aliases", request_type[:Feedback]],
+      :V1_FEEDBACK_INVALID_REGID          => ["/v1/feedback/fetch_invalid_regids", request_type[:Feedback]],
 
       :V1_REGID_PRESENCE                  => ["/v1/regid/presence"],
       :V2_REGID_PRESENCE                  => ["/v1/regid/presence"],
@@ -224,9 +224,9 @@ module Mipush
       :V2_CHECK_SCHEDULE_JOB_EXIST        => ["/v2/schedule_job/exist"],
       :V2_QUERY_SCHEDULE_JOB              => ["/v2/schedule_job/query"],
 
-      :V1_EMQ_ACK_INFO                    => ["/msg/ack/info", request_type.Emq],
-      :V1_EMQ_CLICK_INFO                  => ["/msg/click/info", request_type.Emq],
-      :V1_EMQ_INVALID_REGID               => ["/app/invalid/regid", request_type.Emq],
+      :V1_EMQ_ACK_INFO                    => ["/msg/ack/info", request_type[:Emq]],
+      :V1_EMQ_CLICK_INFO                  => ["/msg/click/info", request_type[:Emq]],
+      :V1_EMQ_INVALID_REGID               => ["/app/invalid/regid", request_type[:Emq]],
     }
   end
 
