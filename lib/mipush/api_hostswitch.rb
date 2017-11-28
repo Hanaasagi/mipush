@@ -73,7 +73,7 @@ module MiPush
       not @inited or(Time.now.to_f - @last_refresh_time) >= Constants.refresh_server_host_interval
     end
 
-    def create(host_list)
+    def update(host_list)
       if not self.need_refresh_host_list
         return
       end
