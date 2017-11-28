@@ -11,8 +11,6 @@ module MiPush
   class Server
     # 服务model(包含host, 最小权重, 最大权重, 权重速率)
 
-    private :change_priority
-
     def initialize(host, min_priority, max_priority, decr_step, incr_step)
       @host = host
       @priority = max_priority
@@ -49,6 +47,8 @@ module MiPush
 
       mutex.unlock
     end
+
+    private :change_priority
   end
 
 
@@ -56,7 +56,6 @@ module MiPush
     # 服务host选举类(单例)
     # 加权轮询算法
     include Singleton
-    private :select_server
 
     def initialize
       @feedback = Server.new(Constants.host_production_feedback, 100, 100, 0, 0)
@@ -134,5 +133,7 @@ module MiPush
       end
       return @default_server
     end
+
+    private :select_server
   end
 end

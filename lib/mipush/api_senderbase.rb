@@ -5,8 +5,9 @@ require 'uri'
 
 
 module MiPush
-  $MAX_BACKOFF_DELAY = 1024000
-  include Constants
+
+  MAX_BACKOFF_DELAY = 1024000
+
   include ERB::Util
 
   def _build_request_url(server, request_path)
@@ -129,7 +130,7 @@ module MiPush
           end
           try_time += 1
           sleep(sleep_time)
-          if sleep_time * 2 < $MAX_BACKOFF_DELAY
+          if sleep_time * 2 < MAX_BACKOFF_DELAY
             sleep_time *= 2
           end
         end

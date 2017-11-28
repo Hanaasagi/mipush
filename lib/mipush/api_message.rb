@@ -1,7 +1,5 @@
 module MiPush
 
-  include Constants
-
   class PushTargetMessage
     def initialize(push_message, target_type, target)
       @push_message = push_message
